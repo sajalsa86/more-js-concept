@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        .myclock {
+            width: 400px;
+            margin: 0 auto;
+            border: 25px solid orange;
+            background-color: gray;
+            border-radius: 30%;
+            margin-top: 100px;
+            padding: 50px;
+        }
+
+        .btn-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .btn-group button {
+            display: block;
+            padding: 10px;
+            background-color: pink;
+            color: blueviolet;
+            border-radius: 12px;
+            font-size: 1.7rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .display-clock {
+            text-align: center;
+            font-size: 2rem;
+            color: green;
+            font-weight: bold;
+            background-color: azure;
+            width: 60px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            border-radius: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="myclock">
+        <div id="display-clock" class="display-clock">0</div>
+        <div class="btn-group">
+            <button id="start-btn">Start</button>
+            <button id="stop-btn">Stop</button>
+            <button type="reset" id="reset-btn">Reset</button>
+        </div>
+    </div>
+    <!-- <script src="interval.js"></script> -->
+    <script src="clock.js"></script>
+</body>
+
+</html>

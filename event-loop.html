@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function foo(b) {
+            const a = 10;
+            return a + b + 11;
+        }
+
+        function bar(x) {
+            const y = 3;
+            return foo(x * y);
+        }
+
+        const baz = bar(7); // assigns 42 to baz
+        console.log(baz)
+        ///////////////////////////////////////////////////////
+        const seconds = new Date().getTime() / 1000;
+
+        setTimeout(() => {
+            // prints out "2", meaning that the callback is not called immediately after 500 milliseconds.
+            console.log(`Ran after ${new Date().getTime() / 1000 - seconds} seconds`);
+        }, 500);
+
+        while (true) {
+            if (new Date().getTime() / 1000 - seconds >= 2) {
+                console.log("Good, looped for 2 seconds");
+                break;
+            }
+        }
+        ////////////////////////////////////////////////////////
+        function a() {
+            console.log('a')
+            b();
+            console.log('aa');
+        }
+        function b() {
+            console.log('b');
+            d();
+            console.log('bb');
+        }
+        function d() {
+            console.log('d');
+            console.log('dd');
+        }
+
+        function x() {
+            console.log('x');
+            y()
+            console.log('xx');
+        }
+        function y() {
+            console.log('y');
+            z();
+            console.log('yy');
+        }
+        function z() {
+            console.log('z');
+            console.log('zz');
+        }
+
+        setTimeout(() => {
+            console.log('inside timeout')
+        }, 2000)
+
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then(json => console.log(json))
+
+        a();
+        x();
+    </script>
+</body>
+
+</html>
